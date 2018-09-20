@@ -45,12 +45,12 @@ int main(int argc, char *argv[]) {
         else if(tok.classificacao==40){
             printf("\t\t\tTipo:%d ERRO\n\n",ERRO);
             erro=1;
-            break;
+           // break;
         }
         else if(tok.classificacao==41){
             printf("\t\t\tTipo:%d Caracter Invalido\n\n",caracInvalido);
             erro=1;
-            break;
+           // break;
         }
         else if(tok.classificacao==1)
             printf("Tipo:%d Soma\n",soma);
@@ -182,7 +182,7 @@ pega: caracterDaVez=fgetc(arquivo);
             aux.classificacao = caracInvalido;
             return aux;
         }
-        else if(ispunct(caracterDaVez) && caracterDaVez!='\''){
+        else if((ispunct(caracterDaVez) && caracterDaVez!= '_') && caracterDaVez!='\''){
 			if(caracterDaVez=='.')
 				goto ponto;
             if(caracterDaVez==';'){
@@ -373,8 +373,9 @@ pega: caracterDaVez=fgetc(arquivo);
             C+=1;
             if(isdigit(caracterDaVez)){
                 aux.lexema[0]='0';
-                aux.lexema[1]='.';
-                for(i=2;isdigit(caracterDaVez) && !caracterDaVez=='\n';i++){
+                aux.lexema[1]=auxCarac;
+                for(i=2;isdigit(caracterDaVez) && caracterDaVez!='\n';i++){
+					printf("caracdaVEZ: %c\n",caracterDaVez);
                     aux.lexema[i]=caracterDaVez;
                     caracterDaVez=fgetc(arquivo);
                     C+=1;
