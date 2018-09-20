@@ -39,5 +39,12 @@ int main() {
         p = '1';
 
 }
-
+/***/asdf//sdf
+.sdf __sdfasdf_asdf_
+15321.5146
+.21345
++-*/.2
+<=>=><=!=!/***//**/
+(){main;if;else;while;do;for;int;float,char=}
+'a'
 
